@@ -19,7 +19,7 @@ const boardCells = document.getElementsByClassName("board-cell");
 
 Array.from(boardCells).forEach((element) => {
   element.addEventListener("click", () => {
-    if (currentPlayer === human && !matchEnded) {
+    if (currentPlayer === human && !matchEnded && element.innerHTML == "") {
       element.innerHTML = human;
       let elementId = element.id;
       board[elementId[1]][elementId[2]] = human;

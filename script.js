@@ -45,6 +45,9 @@ Array.from(boardCells).forEach((element) => {
         else if (localWinner === human) humanScore += 1;
         document.getElementById("ai-score").innerHTML = aiScore;
         document.getElementById("human-score").innerHTML = humanScore;
+
+        document.getElementById("ai-score-sm").innerHTML = aiScore;
+        document.getElementById("human-score-sm").innerHTML = humanScore;
       }
     }
   });

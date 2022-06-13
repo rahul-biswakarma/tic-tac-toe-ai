@@ -23,9 +23,11 @@ Array.from(boardCells).forEach((element) => {
       element.innerHTML = human;
       let elementId = element.id;
       board[elementId[1]][elementId[2]] = human;
+
       currentPlayer = ai;
       bestMove();
       currentPlayer = human;
+
       let localWinner = checkWinner();
       if (localWinner != null) {
         matchEnded = true;

@@ -4,10 +4,10 @@ const bestMove = () => {
 
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
-      let emptyCell = emptyCellCount();
-      if (board[i][j] == "" && emptyCell > 0) {
+      if (board[i][j] == "") {
         board[i][j] = ai;
-        let score = minimax(board, 0, true);
+
+        let score = minimax(board, 0, false);
         board[i][j] = "";
         if (score > bestScore) {
           bestScore = score;
@@ -23,8 +23,8 @@ const bestMove = () => {
 };
 
 let scores = {
-  X: 1,
-  O: -1,
+  X: -10,
+  O: 10,
   tie: 0,
 };
 
@@ -39,8 +39,8 @@ const minimax = (board, depth, isMaximizing) => {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         if (board[i][j] == "") {
-          board[i][j] = human;
-          let score = minimax(board, depth + 1, true);
+          board[i][j] = ai;
+          let score = minimax(board, depth + 1, false);
           board[i][j] = "";
           bestScore = Math.max(score, bestScore);
         }
@@ -52,8 +52,8 @@ const minimax = (board, depth, isMaximizing) => {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         if (board[i][j] == "") {
-          board[i][j] = ai;
-          let score = minimax(board, depth + 1, false);
+          board[i][j] = human;
+          let score = minimax(board, depth + 1, true);
           board[i][j] = "";
           bestScore = Math.min(score, bestScore);
         }

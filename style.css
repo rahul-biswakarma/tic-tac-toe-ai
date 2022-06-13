@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Syncopate", sans-serif;
 }
 body {
   position: relative;
@@ -182,4 +183,53 @@ body {
 
 .board-cell:hover {
   cursor: pointer;
+}
+
+#winner-c {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  transition: all 100ms ease-in;
+}
+
+#winner {
+  position: relative;
+  width: 60vw;
+  height: 50vh;
+  padding: 4rem;
+  background: #191c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 100ms ease-in;
+}
+
+#winner .gradient-text {
+  font-size: 5rem !important;
+  transition: all 100ms ease-in;
+}
+
+#close-winner {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+  transition: all 100ms ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#close-winner:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
 }

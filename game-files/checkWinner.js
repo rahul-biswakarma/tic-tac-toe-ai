@@ -33,5 +33,6 @@ const checkWinner = () => {
   let emptyCell = emptyCellCount();
 
   if (winner == null && emptyCell == 0) return "tie";
+
   return winner;
 };

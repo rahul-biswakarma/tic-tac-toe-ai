@@ -31,6 +31,16 @@ Array.from(boardCells).forEach((element) => {
       let localWinner = checkWinner();
       if (localWinner != null) {
         matchEnded = true;
+        if (localWinner == ai) {
+          $("#winner-c").css("width", "100vw");
+          $("#winner-name").html("AI WON");
+        } else if (localWinner == human) {
+          $("#winner-c").css("width", "100vw");
+          $("#winner-name").html("HUMAN WON");
+        } else if (localWinner == "tie") {
+          $("#winner-c").css("width", "100vw");
+          $("#winner-name").html("TIE!");
+        }
         if (localWinner === ai) aiScore += 1;
         else if (localWinner === human) humanScore += 1;
         document.getElementById("ai-score").innerHTML = aiScore;

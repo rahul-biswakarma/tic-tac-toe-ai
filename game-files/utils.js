@@ -29,3 +29,7 @@ const emptyCellCount = () => {
   }
   return emptyCell;
 };
+
+$("#close-winner").click(() => {
+  $("#winner-c").css("width", "0");
+});

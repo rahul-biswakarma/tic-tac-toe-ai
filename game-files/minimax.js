@@ -16,9 +16,10 @@ const bestMove = () => {
       }
     }
   }
-  board[move.i][move.j] = ai;
-  updateBoard("c" + move.i + move.j, ai);
-
+  if (move) {
+    board[move.i][move.j] = ai;
+    updateBoard("c" + move.i + move.j, ai);
+  }
   currentPlayer = human;
 };
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <div class="player-card" id="human">
+
+        <h2>YOU</h2>
+        <div id="human-score" class="gradient-text">0</div>
+        <div class="player-move-sign">
+            X
+        </div>
+    </div>
+
+    <div>
+        <div class="parent" id="board">
+            <div class="div1 board-cell" id="c00" dataI="0" dataJ="0"></div>
+            <div class="div2 board-cell" id="c01" dataI="0" dataJ="1"></div>
+            <div class="div3 board-cell" id="c02" dataI="0" dataJ="2"></div>
+            <div class="div4 board-cell" id="c10" dataI="1" dataJ="0"></div>
+            <div class="div5 board-cell" id="c11" dataI="1" dataJ="1"></div>
+            <div class="div6 board-cell" id="c12" dataI="1" dataJ="2"></div>
+            <div class="div7 board-cell" id="c20" dataI="2" dataJ="0"></div>
+            <div class="div8 board-cell" id="c21" dataI="2" dataJ="1"></div>
+            <div class="div9 board-cell" id="c22" dataI="2" dataJ="2"></div>
+            <div class="div10 separator"></div>
+            <div class="div11 separator"></div>
+            <div class="div12 separator"></div>
+            <div class="div13 separator"></div>
+            <div class="div14 separator"></div>
+            <div class="div15 separator"></div>
+        </div>
+        <button id="reset">Reset</button>
+    </div>
+
+    <div class="player-card" id="ai">
+        <h2>AI</h2>
+        <div id="ai-score" class="gradient-text">0</div>
+        <div class="player-move-sign">
+            O
+        </div>
+    </div>
+
+
+    <script src="./game-files/checkWinner.js"></script>
+    <script src="./game-files/utils.js"></script>
+    <script src="./game-files/minimax.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

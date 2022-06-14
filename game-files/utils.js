@@ -33,3 +33,31 @@ const emptyCellCount = () => {
 $("#close-winner").click(() => {
   $("#winner-c").css("width", "0");
 });
+
+$("#settings-icon").click(() => {
+  $("#settings-c").css("width", "100vw");
+});
+
+$("#settings-close").click(() => {
+  $("#settings-c").css("width", "0");
+});
+
+const updateGameModeSetting = () => {
+  if (hardMode) {
+    $("#easy-mod").removeClass("game-mode-active");
+    $("#hard-mod").addClass("game-mode-active");
+  } else {
+    $("#easy-mod").addClass("game-mode-active");
+    $("#hard-mod").removeClass("game-mode-active");
+  }
+};
+
+$("#hard-mod").bind("click", () => {
+  hardMode = true;
+  updateGameModeSetting();
+});
+
+$("#easy-mod").bind("click", () => {
+  hardMode = false;
+  updateGameModeSetting();
+});

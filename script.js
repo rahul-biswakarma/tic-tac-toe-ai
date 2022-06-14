@@ -10,7 +10,9 @@ var currentPlayer = human;
 var matchEnded = false;
 var aiScore = 0;
 var humanScore = 0;
-var hardMode = false;
+var hardMode = true;
+
+updateGameModeSetting();
 
 $(".board-cell").html("");
 document.getElementById("ai-score").innerHTML = aiScore;
@@ -19,6 +21,7 @@ document.getElementById("human-score").innerHTML = humanScore;
 const boardCells = document.getElementsByClassName("board-cell");
 
 Array.from(boardCells).forEach((element) => {
+  updateGameModeSetting();
   element.addEventListener("click", () => {
     if (currentPlayer === human && !matchEnded && element.innerHTML == "") {
       element.innerHTML = human;

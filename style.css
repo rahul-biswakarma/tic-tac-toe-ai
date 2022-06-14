@@ -11,6 +11,11 @@
   box-sizing: border-box;
   font-family: "Syncopate", sans-serif;
 }
+
+*:focus {
+  outline: none;
+}
+
 body {
   position: relative;
   display: flex;

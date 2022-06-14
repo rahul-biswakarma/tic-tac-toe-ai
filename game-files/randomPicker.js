@@ -10,8 +10,10 @@ const randomPicker = () => {
       }
     }
   }
-  let randomCell = Math.floor(Math.random() * emptyCells.length);
-  board[emptyCells[randomCell].i][emptyCells[randomCell].j] = ai;
-  updateBoard("c" + emptyCells[randomCell].i + emptyCells[randomCell].j, ai);
-  emptyCells = [];
+  if (emptyCells.length > 0) {
+    let randomCell = Math.floor(Math.random() * emptyCells.length);
+    board[emptyCells[randomCell].i][emptyCells[randomCell].j] = ai;
+    updateBoard("c" + emptyCells[randomCell].i + emptyCells[randomCell].j, ai);
+    emptyCells = [];
+  }
 };

@@ -10,7 +10,7 @@ var currentPlayer = human;
 var matchEnded = false;
 var aiScore = 0;
 var humanScore = 0;
-var hardMode = true;
+var gameMode = 1; // 0->Noob 1->Average 2->Ruthless
 
 updateGameModeSetting();
 
@@ -29,8 +29,14 @@ Array.from(boardCells).forEach((element) => {
       board[elementId[1]][elementId[2]] = human;
 
       currentPlayer = ai;
-      if (hardMode) bestMove();
-      else randomPicker();
+      if (gameMode == 2) bestMove();
+      else if (gameMode == 0) randomPicker();
+      else if (gameMode == 1) {
+        let randomAlgoSelector = Math.floor(Math.random() * 2 + 1);
+        console.log(randomAlgoSelector);
+        if (randomAlgoSelector == 1) bestMove();
+        else randomPicker();
+      }
       currentPlayer = human;
 
       let localWinner = checkWinner();

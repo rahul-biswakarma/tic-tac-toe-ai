@@ -43,21 +43,32 @@ $("#settings-close").click(() => {
 });
 
 const updateGameModeSetting = () => {
-  if (hardMode) {
+  if (gameMode == 2) {
     $("#easy-mod").removeClass("game-mode-active");
+    $("#average-mod").removeClass("game-mode-active");
     $("#hard-mod").addClass("game-mode-active");
-  } else {
+  } else if (gameMode == 0) {
     $("#easy-mod").addClass("game-mode-active");
     $("#hard-mod").removeClass("game-mode-active");
+    $("#average-mod").removeClass("game-mode-active");
+  } else {
+    $("#easy-mod").removeClass("game-mode-active");
+    $("#hard-mod").removeClass("game-mode-active");
+    $("#average-mod").addClass("game-mode-active");
   }
 };
 
 $("#hard-mod").bind("click", () => {
-  hardMode = true;
+  gameMode = 2;
+  updateGameModeSetting();
+});
+
+$("#average-mod").bind("click", () => {
+  gameMode = 1;
   updateGameModeSetting();
 });
 
 $("#easy-mod").bind("click", () => {
-  hardMode = false;
+  gameMode = 0;
   updateGameModeSetting();
 });

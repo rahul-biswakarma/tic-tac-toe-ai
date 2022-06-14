@@ -10,6 +10,7 @@ var currentPlayer = human;
 var matchEnded = false;
 var aiScore = 0;
 var humanScore = 0;
+var hardMode = false;
 
 $(".board-cell").html("");
 document.getElementById("ai-score").innerHTML = aiScore;
@@ -25,7 +26,8 @@ Array.from(boardCells).forEach((element) => {
       board[elementId[1]][elementId[2]] = human;
 
       currentPlayer = ai;
-      bestMove();
+      if (hardMode) bestMove();
+      else randomPicker();
       currentPlayer = human;
 
       let localWinner = checkWinner();

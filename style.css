@@ -246,6 +246,12 @@ body {
   cursor: pointer;
 }
 
+#settings-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #close-winner,
 #settings-close {
   position: absolute;
@@ -266,21 +272,29 @@ body {
   transform: rotate(180deg);
 }
 
-#settings-icon {
+#icons-container {
   position: absolute;
-  stroke: #ccc;
   top: 2rem;
   right: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+#settings-icon,
+#github-icon {
+  stroke: var(--border-color);
   width: 1.6rem;
   height: auto;
   cursor: pointer;
   transition: all 100ms ease-in;
+  display: flex;
+  align-items: center;
 }
 
 #settings-icon:hover {
   transform: rotate(180deg);
 }
-
 .game-mode-active {
   background: rgb(34, 193, 195);
   background: radial-gradient(
